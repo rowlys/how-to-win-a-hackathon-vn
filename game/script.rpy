@@ -17,6 +17,21 @@
             call choose_lab_state
         elif current_state == State.ASSEMBLE_TEAM:
             call assemble_team_state
+        elif current_state == State.RECRUIT_RPL:
+            call recruit_rpl_state
+        elif current_state == State.RECRUIT_KCV:
+            call recruit_kcv_state
+        elif current_state == State.RECRUIT_GIGA:
+            call recruit_giga_state
+        elif current_state == State.RECRUIT_PLASA:
+            call recruit_plasa_state
+        elif current_state == State.RECRUIT_105:
+            call recruit_105_state
+        elif current_state == State.RECRUIT_KORIDOR:
+            call recruit_koridor_state
+        elif current_state == State.ENDING:
+            call ending_state
+            
 
         else:
             return

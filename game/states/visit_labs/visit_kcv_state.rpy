@@ -1,4 +1,5 @@
 label visit_kcv_state:
+    scene bg kcv with dissolve
     if "kcv" not in visited_labs:
         $ visited_labs.add("kcv")
         call visit_kcv_state.first_visit

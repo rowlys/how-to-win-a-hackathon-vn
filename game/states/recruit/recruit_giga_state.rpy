@@ -1,5 +1,5 @@
 label recruit_giga_state:
-    # Ganti scene ke Lab GIGA
+    scene bg giga with dissolve
 
     if "giga" not in visited_recruitment_locations:
         $ visited_recruitment_locations.add("giga")
@@ -55,12 +55,15 @@ label recruit_giga_state.first_visit:
 
     menu:
         "Membuat tampilan aplikasi semenarik mungkin secara visual.":
-            arif "Hmm, kalau untuk tampilan menarik itu lebih ke UI. UX itu cakupannya jauh lebih luas dari sekadar estetika.'"
-            "Arif kembali ke laptopnya. Sepertinya aku harus belajar lebih dulu sebelum balik ke sini.'"
-            arif "Kayaknya kamu belum bener-bener ngerti bidang aku. Aku nggak yakin kita bakal cocok di tim yang sama.'"
+            arif "Hmm, kalau untuk tampilan menarik itu lebih ke UI. UX itu cakupannya jauh lebih luas dari sekadar estetika."
+            "Arif kembali ke laptopnya. Sepertinya aku harus belajar lebih dulu sebelum balik ke sini."
+            arif "Kayaknya kamu belum bener-bener ngerti bidang aku. Aku nggak yakin kita bakal cocok di tim yang sama."
+            "'Sepertinya aku harus coba lagi nanti.'"
+            aku "Duh, oke. Untuk sekarang, aku pamit dulu ya, Rif."
             return''
 
         "Merancang pengalaman pengguna yang mudah, nyaman, dan bermakna.":
+            $ arif_pass = True
             arif "Nah, tepat! UX itu emang soal keseluruhan pengalaman pengguna, bukan cuma soal cakepnya tampilan."
             arif "Oke, kamu ngerti kerjaan aku. Jadi kamu emang butuh orang kayak aku dong di proyekmu?"
 
@@ -68,32 +71,20 @@ label recruit_giga_state.first_visit:
             arif "Itu kerjaan developer, bukan desainer. Kayaknya kamu belum paham bidang aku sama sekali."
             arif "Cari tau dulu deh sebelum ngajak orang. Aku tunggu kalau kamu udah siap."
             "Arif kembali ke laptopnya. Aku harus belajar lebih dulu."
+            "'Sepertinya aku harus coba lagi nanti.'"
+            aku "Duh, oke. Untuk sekarang, aku pamit dulu ya, Rif."
             return
 
         "Mengatur alur logika dan sistem di balik antarmuka.":
             arif "Hmm, itu lebih ke ranah system design atau information architecture."
             arif "Pemahamanmu soal UX masih kurang, kayaknya. Kita ngobrol lagi kalau kamu udah lebih paham ya."
             "Arif kembali ke laptopnya."
+            "'Sepertinya aku harus coba lagi nanti.'"
+            aku "Duh, oke. Untuk sekarang, aku pamit dulu ya, Rif."
             return
 
-    menu:
-        "'Butuh banget, Rif.'":
-            aku "Butuh banget! Siapa yang mau pake aplikasi kalau tampilannya nggak enak, kan?"
-            arif "Nah, bener. Oke deh, aku masuk."
-            aku "Serius? Makasih banyak ya, Rif!"
-            arif "Santai aja. Lumayan buat pengalaman, daripada di sini sendirian ngerjain tugas mulu."
-
-            "Dengan begitu, aku berhasil mengajak Arif untuk bergabung di timku!"
-            return
-
-        "'Hmm, aku pikirin dulu.'":
-            aku "Hmm, sebenarnya aku masih belum yakin sih proyekku perlu UI/UX yang bagus banget apa ga."
-            arif "Oh, oke. Santai, nggak masalah. Pikirin aja dulu."
-            aku "Iya, mungkin aku cari-cari yang lain dulu ya, Rif."
-            arif "Siap. Kalau udah ada keputusan, kabarin aku aja."
-
-            "Aku mengangkat tangan pamit ke Arif dan melanjutkan pencarianku."
-            return
+    call recruit_giga_state.recruit_arif
+    return
 
 
 label recruit_giga_state.revisit:
@@ -106,36 +97,46 @@ label recruit_giga_state.revisit:
     arif "Tapi sebelum kamu jawab — tadi aku sempet kepikiran satu hal."
     arif "Biar aku tau kamu serius, jawab dulu: apa tujuan utama dari UX design?"
 
-    "Hmm, pertanyaan yang sama. Aku udah lebih siap sekarang."
-    "UX — User Experience. Intinya bukan soal visualnya yang bagus, tapi soal keseluruhan pengalaman pengguna."
-    "Mudah dipake, nyaman, dan bermakna. Itu yang dicari dari UX yang baik."
-    "Aku nggak boleh salah kali ini."
+    if not arif_pass:
+        "Hmm, pertanyaan yang sama. Aku udah lebih siap sekarang."
+        "UX — User Experience. Intinya bukan soal visualnya yang bagus, tapi soal keseluruhan pengalaman pengguna."
+        "Mudah dipake, nyaman, dan bermakna. Itu yang dicari dari UX yang baik."
+        "Aku nggak boleh salah kali ini."
 
-    menu:
-        "Membuat tampilan aplikasi semenarik mungkin secara visual.":
-            arif "Masih belum bener. Itu UI, bukan UX. Beda ya konsepnya."
-            arif "Aku rasa kamu perlu baca-baca dulu soal ini. Kabarin aku kalau udah siap."
-            "Aku mengangkat tangan pamit ke Arif."
-            return
+        menu:
+            "Membuat tampilan aplikasi semenarik mungkin secara visual.":
+                arif "Masih belum bener. Itu UI, bukan UX. Beda ya konsepnya."
+                arif "Aku rasa kamu perlu baca-baca dulu soal ini. Kabarin aku kalau udah siap."
+                "Aku mengangkat tangan pamit ke Arif."
+                "Sepertinya aku harus coba lagi nanti."
+                return
 
-        "Merancang pengalaman pengguna yang mudah, nyaman, dan bermakna.":
-            arif "Nah, bener! Itu dia intinya."
-            arif "Oke, jadi gimana? Masih butuh orang kayak aku di timmu?"
+            "Merancang pengalaman pengguna yang mudah, nyaman, dan bermakna.":
+                arif "Nah, bener! Itu dia intinya."
+                arif "Oke, jadi gimana? Masih butuh orang kayak aku di timmu?"
 
-        "Menulis kode untuk mengoptimalkan performa aplikasi.":
-            arif "Itu kerjaan developer. Jauh dari UX."
-            arif "Pelajarin dulu deh bidangku sebelum balik lagi."
-            "Aku mengangkat tangan pamit ke Arif."
-            return
+            "Menulis kode untuk mengoptimalkan performa aplikasi.":
+                arif "Itu kerjaan developer. Jauh dari UX."
+                arif "Pelajarin dulu deh bidangku sebelum balik lagi."
+                "Aku mengangkat tangan pamit ke Arif."
+                "Sepertinya aku harus coba lagi nanti."
+                return
 
-        "Mengatur alur logika dan sistem di balik antarmuka.":
-            arif "Masih melenceng. Itu lebih ke system design."
-            arif "Kalau udah lebih paham, balik lagi ya."
-            "Aku mengangkat tangan pamit ke Arif."
-            return
+            "Mengatur alur logika dan sistem di balik antarmuka.":
+                arif "Masih melenceng. Itu lebih ke system design."
+                arif "Kalau udah lebih paham, balik lagi ya."
+                "Aku mengangkat tangan pamit ke Arif."
+                "Sepertinya aku harus coba lagi nanti."
+                return
 
+    call recruit_giga_state.recruit_arif
+    return
+
+
+label recruit_giga_state.recruit_arif:
     menu:
         "'Butuh banget, Rif.'":
+            $ recruited_students.add("arif")
             aku "Butuh banget! Siapa yang mau pake aplikasi kalau tampilannya nggak enak, kan?"
             arif "Nah, bener. Oke deh, aku masuk."
             aku "Serius? Makasih banyak ya, Rif!"

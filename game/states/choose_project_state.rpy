@@ -39,14 +39,22 @@ label choose_project_state:
     "Aku menjentikkan jariku, merasa ide itu cukup bagus. Aku berdiri, mematikan laptopku yang baru saja selesai booting, dan langsung pergi keluar kamar."
     "Menaikki motorku, aku memasukkan kunci, siap untuk pergi."
 
+    scene bg tc with dissolve
+
     "Di depanku adalah Gedung Informatika ITS. Aku datang ke sini hampir setiap hari untuk kelas."
     "Tapi hari ini, aku datang ke sini untuk tujuan yang berbeda."
 
     "Aku jalan masuk ke dalam gedung, menghadap ke arah Plaza."
 
+    scene bg entrance with dissolve
+
     "'Hm...'"
 
     "'Di lantai 1 seharusnya ga ada lab, full ruangan kelas. Di lantai 2 isinya ruangan TU dan dosen. Harusnya lab-lab ada dilantai 3,' pikirku."
+
+    scene bg tangga with dissolve
+
+    pause 1.5
 
     $ current_state = State.HUB_EXPLORE
 

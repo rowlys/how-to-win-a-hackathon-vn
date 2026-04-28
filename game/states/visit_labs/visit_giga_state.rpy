@@ -1,4 +1,5 @@
 label visit_giga_state:
+    scene bg giga with dissolve
     if "giga" not in visited_labs:
         $ visited_labs.add("giga")
         call visit_giga_state.first_visit
@@ -11,7 +12,7 @@ label visit_giga_state:
 
 label visit_giga_state.first_visit:
     "Aku berjalan menuju lab yang letaknya dekat tangga, dan menemukan papan nama bertuliskan \"Laboratorium GIGA\"."
-    "Aku mbauk ke dalamnya. Suasana di dalam cukup ramai, beberapa layar besar terpasang di dinding, dan ada sudut ruangan yang entah kenapa terdapat kabel-kabel dengan headset aneh tergantung di sana."
+    "Aku masuk ke dalamnya. Suasana di dalam cukup ramai, dengan sebuah layar besar diujung meja besar di tengah ruangan, dan ada sudut ruangan yang entah kenapa terdapat kabel-kabel dengan headset aneh tergantung di sana."
 
     "Seorang mahasiswa yang duduk di dekat pintu menyadari kehadiranku."
     # Kasi liat admin giga
@@ -31,12 +32,12 @@ label visit_giga_state.first_visit:
             admin_giga "Tentu, dengan senang hati."
 
     admin_giga "Jadi, nama GIGA itu bukan sekadar nama. Itu singkatan dari empat pilar spesialisasi lab ini."
-    admin_giga "G yang pertama itu 'Grafika'. Ini tentang computer graphics, visualisasi, dan rendering. Bagaimana komputer bisa menghasilkan gambar dan animbai."
+    admin_giga "G yang pertama itu 'Grafika'. Ini tentang computer graphics, visualisasi, dan rendering. Bagaimana komputer bisa menghasilkan gambar dan animasi."
     admin_giga "I itu 'Interaksi', fokusnya ke UI/UX. Bagaimana manusia berinteraksi dengan sistem digital, gimana desain antarmuka yang intuitif dan nyaman dipakai."
     admin_giga "G yang kedua itu 'Game'. Pengembangan game, dari desain mekanik, game engine, sampai implementasinya."
     admin_giga "Dan A itu 'Analitik'. Ini sedikit menyentuh algoritma dan AI, lebih ke sisi analisis data dan kecerdasan komputasional."
-    aku "Wah, jadi GIGA itu Grafika, Interaksi, Game, Analitik. Pantas aja namanya GIGA."
-    admin_giga "Tepat sekali. Dan VR sama AR yang kamu liat tadi, itu ada di persimpangan beberapa pilar sekaligus. Grafika, interaksi, bahkan game pun bisa mbauk ke sana."
+    aku "Wah, ternyata itu arti GIGA."
+    admin_giga "Iya, dan VR sama AR yang kamu liat tadi, itu ada di persimpangan beberapa pilar sekaligus. Grafika, interaksi, bahkan game pun bisa masuk ke sana."
     admin_giga "Ngomong-ngomong, kamu ke sini ada keperluan khusus ga?"
 
     if project_idea == "game":
@@ -72,7 +73,7 @@ label visit_giga_state.first_visit:
             aku "Baik mba, makasih banyak ya penjelasannya. Aku coba ke lab lain juga dulu ya mba. Terima kasih banyak."
             anna "Sama-sama."
 
-    "Aku keluar dari lab GIGA dengan kepala penuh informbai baru. Grafika, Interaksi, Game, Analitik — dan VR. Lumayan banyak yang bisa dipelajari di situ."
+    "Aku keluar dari lab GIGA dengan kepala penuh informbai baru. Grafika, Interaksi, Game, dan Analitik. Lumayan banyak yang bisa dipelajari di situ."
 
     return
 

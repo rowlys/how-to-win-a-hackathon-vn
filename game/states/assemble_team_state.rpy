@@ -1,5 +1,8 @@
 label assemble_team_state:
+    scene bg entrance with dissolve
+
     if first_assemble_team:
+        $ first_assemble_team = False
         "Aku kembali ke Gedung Informatika."
         "'Aku udah ada ide proyeknya. Terus sekarang aku sudah tau mau pake lab apa untuk ngerjainnya. Tapi aku masih butuh tim buat ngerjainnya.'"
         "'Aku harus cari temen buat ngerjain proyek ini bareng-bareng. Mungkin temen-temenku yang lagi di TC bisa aku ajak...'"
@@ -18,25 +21,31 @@ label assemble_team_state:
         elif project_idea == "software":
             "'Aku butuh orang yang punya pengalaman dengan software development, terutama yang ngerti tentang aplikasi manajemen keuangan. Lab RPL mungkin tempat yang tepat buat cari orang kayak gitu.'"
 
+    if len(recruited_students) >= 3:
+        "'Sip! Aku udah berhasil ngumpulin tim untuk hackathonnya!'"
+        "'Sekarang, kita tinggal kerjain proyeknya bareng-bareng!'"
+        $ current_state = State.ENDING
+        return
+
     "Coba cari orang di mana ya?"
 
     menu:
-        "Lab RPL":
+        "Lab RPL" if "andi" not in recruited_students:
             $ current_state = State.RECRUIT_RPL
 
-        "Lab KCV":
+        "Lab KCV" if "steven" not in recruited_students:
             $ current_state = State.RECRUIT_KCV
 
-        "Lab GIGA":
+        "Lab GIGA" if "arif" not in recruited_students:
             $ current_state = State.RECRUIT_GIGA
 
-        "Plasa":
+        "Plasa" if "lila" not in recruited_students:
             $ current_state = State.RECRUIT_PLASA
 
-        "Kelas 105":
+        "Kelas 105" if "popol" not in recruited_students:
             $ current_state = State.RECRUIT_105
 
-        "Coba keliling koridor":
+        "Coba keliling koridor" if "anna" not in recruited_students:
             $ current_state = State.RECRUIT_KORIDOR
 
     return

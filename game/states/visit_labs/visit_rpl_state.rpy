@@ -1,4 +1,5 @@
 label visit_rpl_state:
+    scene bg rpl with dissolve
     if "rpl" not in visited_labs:
         $ visited_labs.add("rpl")
         call visit_rpl_state.first_visit

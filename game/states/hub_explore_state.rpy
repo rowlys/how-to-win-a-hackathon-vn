@@ -1,4 +1,6 @@
 label hub_explore_state:
+    scene bg hub with dissolve
+
     if first_visit_hub:
         "Aku sekarang berada di lantai 3. Di sini terdapat 8 lab yang bisa dimanfaatkan mahasiswa."
         "'Seperti untuk menggunakan komputernya demi mengerjakan proyek hackathon,' aku tersenyum."

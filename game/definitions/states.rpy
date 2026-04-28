@@ -15,7 +15,8 @@ init python:
         CHOOSE_LAB = "choose_lab"
         ASSEMBLE_TEAM = "assemble_team"
         HACKATHON_RESULT = "hackathon_result"
-        GAME_OVER = "game_over"
+        ENDING = "ending"
+        EXIT = "exit"
 
     def lab_rpl_label():
         if "rpl" in visited_labs:
