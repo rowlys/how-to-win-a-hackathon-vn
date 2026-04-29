@@ -23,6 +23,8 @@ label choose_project_state:
 
     "'Oke, sip. Saatnya bekerja!'"
     "Aku berdiri dari kasurku dan jalan ke meja belajarku untuk mulai mengerjakan proyek ini."
+
+    scene bg laptop with fade
     "Aku menekan tombol power pada laptopku, menunggu untuk proses booting selesai."
     "..."
     "..."

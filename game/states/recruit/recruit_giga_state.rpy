@@ -57,21 +57,34 @@ label recruit_giga_state.first_visit:
     "'Yang ditekanin itu kata 'Experience'-nya. Keseluruhan perasaan dan interaksi pengguna sama produk.'"
     "'Oke, kayaknya aku ngerti arahnya. Jawaban yang bener pasti yang paling dekat sama konsep 'pengalaman' itu.'"
 
+    hide arif
     menu:
         "Membuat tampilan aplikasi semenarik mungkin secara visual.":
+            show arif neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             arif "Hmm, kalau untuk tampilan menarik itu lebih ke UI. UX itu cakupannya jauh lebih luas dari sekadar estetika."
             "Arif kembali ke laptopnya. Sepertinya aku harus belajar lebih dulu sebelum balik ke sini."
             arif "Kayaknya kamu belum bener-bener ngerti bidang aku. Aku nggak yakin kita bakal cocok di tim yang sama."
             "'Sepertinya aku harus coba lagi nanti.'"
             aku "Duh, oke. Untuk sekarang, aku pamit dulu ya, Rif."
-            return''
+            return
 
         "Merancang pengalaman pengguna yang mudah, nyaman, dan bermakna.":
+            show arif neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             $ arif_pass = True
             arif "Nah, tepat! UX itu emang soal keseluruhan pengalaman pengguna, bukan cuma soal cakepnya tampilan."
             arif "Oke, kamu ngerti kerjaan aku. Jadi kamu emang butuh orang kayak aku dong di proyekmu?"
 
         "Menulis kode untuk mengoptimalkan performa aplikasi.":
+            show arif neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             arif "Itu kerjaan developer, bukan desainer. Kayaknya kamu belum paham bidang aku sama sekali."
             arif "Cari tau dulu deh sebelum ngajak orang. Aku tunggu kalau kamu udah siap."
             "Arif kembali ke laptopnya. Aku harus belajar lebih dulu."
@@ -80,6 +93,10 @@ label recruit_giga_state.first_visit:
             return
 
         "Mengatur alur logika dan sistem di balik antarmuka.":
+            show arif neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             arif "Hmm, itu lebih ke ranah system design atau information architecture."
             arif "Pemahamanmu soal UX masih kurang, kayaknya. Kita ngobrol lagi kalau kamu udah lebih paham ya."
             "Arif kembali ke laptopnya."
@@ -92,6 +109,10 @@ label recruit_giga_state.first_visit:
 
 
 label recruit_giga_state.revisit:
+    show arif neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     "Aku kembali ke Lab GIGA. Arif masih di tempat yang sama, langsung melirik ke arahku."
     arif "Eh, balik lagi. Udah ada keputusan?"
     aku "Belum. Aku mau nanya lagi soal keahlian kamu, boleh?"
@@ -107,8 +128,13 @@ label recruit_giga_state.revisit:
         "Mudah dipake, nyaman, dan bermakna. Itu yang dicari dari UX yang baik."
         "Aku nggak boleh salah kali ini."
 
+        hide arif
         menu:
             "Membuat tampilan aplikasi semenarik mungkin secara visual.":
+                show arif neutral:
+                    xalign 0.5
+                    yalign 0.5
+                    zoom 1.5
                 arif "Masih belum bener. Itu UI, bukan UX. Beda ya konsepnya."
                 arif "Aku rasa kamu perlu baca-baca dulu soal ini. Kabarin aku kalau udah siap."
                 "Aku mengangkat tangan pamit ke Arif."
@@ -116,10 +142,18 @@ label recruit_giga_state.revisit:
                 return
 
             "Merancang pengalaman pengguna yang mudah, nyaman, dan bermakna.":
+                show arif neutral:
+                    xalign 0.5
+                    yalign 0.5
+                    zoom 1.5
                 arif "Nah, bener! Itu dia intinya."
                 arif "Oke, jadi gimana? Masih butuh orang kayak aku di timmu?"
 
             "Menulis kode untuk mengoptimalkan performa aplikasi.":
+                show arif neutral:
+                    xalign 0.5
+                    yalign 0.5
+                    zoom 1.5
                 arif "Itu kerjaan developer. Jauh dari UX."
                 arif "Pelajarin dulu deh bidangku sebelum balik lagi."
                 "Aku mengangkat tangan pamit ke Arif."
@@ -127,6 +161,10 @@ label recruit_giga_state.revisit:
                 return
 
             "Mengatur alur logika dan sistem di balik antarmuka.":
+                show arif neutral:
+                    xalign 0.5
+                    yalign 0.5
+                    zoom 1.5
                 arif "Masih melenceng. Itu lebih ke system design."
                 arif "Kalau udah lebih paham, balik lagi ya."
                 "Aku mengangkat tangan pamit ke Arif."
@@ -138,8 +176,13 @@ label recruit_giga_state.revisit:
 
 
 label recruit_giga_state.recruit_arif:
+    hide arif
     menu:
         "'Butuh banget, Rif.'":
+            show arif neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             $ recruited_students.add("arif")
             aku "Butuh banget! Siapa yang mau pake aplikasi kalau tampilannya nggak enak, kan?"
             arif "Nah, bener. Oke deh, aku masuk."
@@ -150,6 +193,10 @@ label recruit_giga_state.recruit_arif:
             return
 
         "'Hmm, aku pikirin dulu.'":
+            show arif neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Hmm, sebenarnya aku masih belum yakin sih proyekku perlu UI/UX yang bagus banget apa ga."
             arif "Oh, oke. Santai, nggak masalah. Pikirin aja dulu."
             aku "Iya, mungkin aku cari-cari yang lain dulu ya, Rif."

@@ -1,5 +1,7 @@
 define aku = Character("Aku")
 
+define juri = Character("Juri")
+
 # --- Lab Admins ---
 define admin_kcv = Character("Admin KCV") # Steven
 define admin_giga = Character("Admin GIGA") # anna

@@ -23,6 +23,7 @@ label visit_rpl_state.first_visit:
         xalign 0.5
         yalign 0.5
         zoom 1.5 
+
     admin_rpl "Halo, mahasiswa baru ya?"
     aku "Iya, mas. Semester 1. Kok ketahuan?"
     admin_rpl "Hahaha, gara-gara kelihatan bingung sih. Yang belum pernah ke sini biasanya emang gitu."
@@ -41,8 +42,13 @@ label visit_rpl_state.first_visit:
         aku "Game simulasi edukasional, mas."
         andi "Seru tuh. Untuk game, ada lab yang lebih cocok spesialisasinya. Tapi komputer di sini bebas dipakai kok, ga masalah."
 
+    hide andi
     menu:
         "Tanyakan tentang spesialisasi lab ini lebih lanjut":
+            show andi neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Mas, aku penasaran, lab ini spesialisasinya apa sebenernya?"
             andi "Sesuai namanya, 'Rekayasa Perangkat Lunak'. Fokusnya ke pengembangan software secara menyeluruh."
             andi "Kamu semester 1, jadi mungkin belum ketemu mata kuliahnya. Tapi nanti bakal belajar soal keseluruhan proses pengembangan software, dari perencanaan, desain, implementasi, sampai testing dan deployment."
@@ -53,6 +59,10 @@ label visit_rpl_state.first_visit:
             andi "Sama-sama. Kalau mau tanya-tanya lagi, mampir aja."
 
         "Keluar lab":
+            show andi neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Baik, makasih mas. Aku mau keliling ke lab lain dulu."
             andi "Iya, silahkan. Mampir lagi kalau butuh apa-apa ya."
 
@@ -61,11 +71,20 @@ label visit_rpl_state.first_visit:
     return
 
 label visit_rpl_state.revisit:
+    show andi neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     "Aku kembali ke lab RPL. Andi mengangguk saat melihatku masuk."
     andi "Oh, balik lagi. Ada yang mau ditanyain?"
 
+    hide andi
     menu:
         "Tanyakan tentang spesialisasi lab ini lagi":
+            show andi neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Mas, aku mau minta penjelasan lagi soal spesialisasi lab ini. Boleh?"
             andi "Tentu. Jadi lab ini fokusnya ke pengembangan software secara menyeluruh."
             andi "Keseluruhan prosesnya, dari perencanaan, desain, implementasi, sampai testing dan deployment."
@@ -76,6 +95,10 @@ label visit_rpl_state.revisit:
             andi "Sama-sama. Kalau mau tanya lagi, mampir aja."
 
         "Keluar lab":
+            show andi neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Nggak ada, mas. Makasih. Aku duluan ya."
             andi "Oke, hati-hati."
 

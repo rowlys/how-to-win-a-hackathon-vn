@@ -15,7 +15,7 @@ label visit_giga_state.first_visit:
     "Aku masuk ke dalamnya. Suasana di dalam cukup ramai, dengan sebuah layar besar diujung meja besar di tengah ruangan, dan ada sudut ruangan yang entah kenapa terdapat kabel-kabel dengan headset aneh tergantung di sana."
 
     "Seorang mahasiswa yang duduk di dekat pintu menyadari kehadiranku."
-    
+
     show anna neutral:
         xalign 0.5
         yalign 0.5
@@ -26,12 +26,21 @@ label visit_giga_state.first_visit:
     aku "Berbeda gimana, mba?"
     admin_giga "Coba liat dulu aja sekeliling. Kira-kira kamu bisa tebak ga, lab ini spesialisasinya apa?"
 
+    hide anna
     menu:
         "Tebak berdasarkan headset yang tergantung":
+            show anna neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Itu headset VR ya, mba? Jadi lab ini berhubungan sama VR?"
             admin_giga "Wah, hampir tepat. VR dan AR emang salah satu yang dikerjain di sini. Tapi itu bukan satu-satunya."
 
         "Aku tidak bisa menebak":
+            show anna neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Aku kurang bisa nangkep, mba. Bisa dijelasin langsung aja?"
             admin_giga "Tentu, dengan senang hati."
 
@@ -54,8 +63,13 @@ label visit_giga_state.first_visit:
         aku "Iya, mba. Aku lagi nyari lab yang cocok buat ngerjain proyek hackathon. Proyekku berhubungan sama aplikasi manajemen keuangan."
         admin_giga "Oh, untuk software kayak gitu, mungkin lab lain lebih cocok spesialisasinya. Tapi kalau proyekmu butuh elemen UI/UX yang bagus, pilar Interaksi di sini bisa kasih banyak insight lho."
 
+    hide anna
     menu:
         "Tanyakan tentang pilar-pilar GIGA lebih lanjut":
+            show anna neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Mba, bisa cerita lebih dalam ga soal mbaing-mbaing pilarnya? Aku penasaran soal implementasinya di dunia nyata."
             admin_giga "Tentu. Grafika misalnya, ini dipakai di mana-mana, dari film animbai, simulasi arsitektur, sampai visualisasi data ilmiah."
             admin_giga "Interaksi atau UI/UX itu krusial banget. Sebuah aplikasi yang bagus secara teknis tapi susah dipakai ya percuma. Di sini kita belajar riset pengguna, prototyping, dan evaluasi desain."
@@ -66,13 +80,17 @@ label visit_giga_state.first_visit:
             aku "Wah, makasih banyak ya mba penjelasannya. Aku jadi makin paham sekarang."
             admin_giga "Sama-sama. Kalau mau eksplorasi lebih lanjut, atau mau coba headset VR-nya, mampir lagi aja kapanpun."
             aku "Oh iya mba, aku lupa nanya. Kalau boleh tau, nama mba siapa ya?"
-            admin_giga "Oh, namaku Anna, aku admin di lab ini." 
+            admin_giga "Oh, namaku Anna, aku admin di lab ini."
             anna "Ingat ya, kalau mau mampir atau nanya-nanya, jangan sungkan cari aku aja."
 
         "Keluar lab":
+            show anna neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Wah, keren banget mba."
             aku "Oh iya mba, aku lupa nanya. Kalau boleh tau, nama mba siapa ya?"
-            admin_giga "Oh, namaku Anna, aku admin di lab ini." 
+            admin_giga "Oh, namaku Anna, aku admin di lab ini."
             anna "Kalau kamu mau mampir lagi atau nanya-nanya soal lab ini, jangan sungkan cari aku aja ya."
             aku "Baik mba, makasih banyak ya penjelasannya. Aku coba ke lab lain juga dulu ya mba. Terima kasih banyak."
             anna "Sama-sama."
@@ -82,11 +100,20 @@ label visit_giga_state.first_visit:
     return
 
 label visit_giga_state.revisit:
+    show anna neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     "Aku kembali ke lab GIGA. Anna melambaikan tangan saat melihatku masuk."
     anna "Oh, balik lagi. Ada yang mau ditanyain?"
 
+    hide anna
     menu:
         "Tanyakan tentang pilar-pilar GIGA lagi":
+            show anna neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Mba, bisa minta penjelasan lagi soal pilar-pilar GIGA? Aku mau dengerin ulang."
             anna "Tentu. Grafika itu tentang computer graphics, visualisasi, dan rendering — bagaimana komputer menghasilkan gambar dan animasi."
             anna "Interaksi fokusnya ke UI/UX. Bagaimana desain antarmuka yang intuitif dan nyaman dipakai oleh pengguna."
@@ -98,6 +125,10 @@ label visit_giga_state.revisit:
             anna "Sama-sama. Kalau mau mampir lagi, jangan sungkan."
 
         "Keluar lab":
+            show anna neutral:
+                xalign 0.5
+                yalign 0.5
+                zoom 1.5
             aku "Nggak ada, mba. Makasih. Aku duluan ya."
             anna "Oke, hati-hati."
 
