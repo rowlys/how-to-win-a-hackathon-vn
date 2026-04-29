@@ -10,7 +10,7 @@ init python:
         RECRUIT_RPL = "recruit_rpl"
         RECRUIT_KCV = "recruit_kcv"
         RECRUIT_PLASA = "recruit_plasa"
-        RECRUIT_105 = "recruit_105"
+        RECRUIT_VENDING = "recruit_vending"
         RECRUIT_KORIDOR = "recruit_koridor"
         CHOOSE_LAB = "choose_lab"
         ASSEMBLE_TEAM = "assemble_team"

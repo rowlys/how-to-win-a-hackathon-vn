@@ -27,6 +27,6 @@ define arif = Character("Arif")
 # Correct for: ai (dataset & model storage), software (financial data management)
 define lila = Character("Lila")
 
-# Recruitment Location: Kelas 105 | Specialization: Backend Development
+# Recruitment Location: Area Vending Machine | Specialization: Backend Development
 # Correct for: ai, software, game (needed by all three)
 define popol = Character("Popol")

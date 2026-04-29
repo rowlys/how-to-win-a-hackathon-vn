@@ -42,8 +42,8 @@ label assemble_team_state:
         "Plasa" if "lila" not in recruited_students:
             $ current_state = State.RECRUIT_PLASA
 
-        "Kelas 105" if "popol" not in recruited_students:
-            $ current_state = State.RECRUIT_105
+        "Area dekat vending machine" if "popol" not in recruited_students:
+            $ current_state = State.RECRUIT_VENDING
 
         "Coba keliling koridor" if "anna" not in recruited_students:
             $ current_state = State.RECRUIT_KORIDOR

@@ -25,8 +25,8 @@
             call recruit_giga_state
         elif current_state == State.RECRUIT_PLASA:
             call recruit_plasa_state
-        elif current_state == State.RECRUIT_105:
-            call recruit_105_state
+        elif current_state == State.RECRUIT_VENDING:
+            call recruit_vending_state
         elif current_state == State.RECRUIT_KORIDOR:
             call recruit_koridor_state
         elif current_state == State.ENDING:

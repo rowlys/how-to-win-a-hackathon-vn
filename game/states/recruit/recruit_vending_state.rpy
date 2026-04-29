@@ -1,19 +1,19 @@
-label recruit_105_state:
-    scene bg 105 with dissolve
+label recruit_vending_state:
+    scene bg vending with dissolve
 
-    if "105" not in visited_recruitment_locations:
-        $ visited_recruitment_locations.add("105")
-        call recruit_105_state.first_visit
+    if "vending" not in visited_recruitment_locations:
+        $ visited_recruitment_locations.add("vending")
+        call recruit_vending_state.first_visit
     else:
-        call recruit_105_state.revisit
+        call recruit_vending_state.revisit
 
     $ current_state = State.ASSEMBLE_TEAM
     return
 
 
-label recruit_105_state.first_visit:
-    "Aku masuk ke Kelas 105. Ruangannya sepi, hanya ada beberapa orang yang belajar sendiri-sendiri."
-    "Di salah satu kursi, ada seorang mahasiswa yang tampak sedang mengetik serius di laptopnya."
+label recruit_vending_state.first_visit:
+    "Aku pergi ke area dekat vending machine. Areanya sepi, hanya ada satu orang yang duduk di meja dekat vending machine."
+    "Dia tampak sedang mengetik serius di laptopnya."
     "Aku menghampirinya."
 
     show popol neutral:
@@ -91,16 +91,16 @@ label recruit_105_state.first_visit:
             "Aku pamit dan keluar dari kelas."
             return
 
-    call recruit_105_state.recruit_popol
+    call recruit_vending_state.recruit_popol
     return
 
 
-label recruit_105_state.revisit:
+label recruit_vending_state.revisit:
     show popol neutral:
         xalign 0.5
         yalign 0.5
         zoom 1.5
-    "Aku kembali ke Kelas 105. Popol masih ada di tempat yang sama, menoleh saat aku masuk."
+    "Aku kembali ke area dekat vending machine. Popol masih ada di tempat yang sama, menoleh saat aku masuk."
     popol "Oh, balik lagi. Gimana?"
     aku "Belum ada keputusan, mas. Boleh minta penjelasan lagi soal keahlian mas?"
     popol "Boleh. Singkatnya — backend. Server, API, infrastruktur."
@@ -155,11 +155,11 @@ label recruit_105_state.revisit:
                 "Aku pamit dan keluar dari kelas."
                 return
 
-    call recruit_105_state.recruit_popol
+    call recruit_vending_state.recruit_popol
     return
 
 
-label recruit_105_state.recruit_popol:
+label recruit_vending_state.recruit_popol:
     hide popol
     menu:
         "'Butuhin banget, mas.'":
