@@ -2,9 +2,9 @@ label visit_rpl_state:
     scene bg rpl with dissolve
     if "rpl" not in visited_labs:
         $ visited_labs.add("rpl")
-        call visit_rpl_state.first_visit
+        call visit_rpl_state.first_visit from _call_visit_rpl_state_first_visit
     else:
-        call visit_rpl_state.revisit
+        call visit_rpl_state.revisit from _call_visit_rpl_state_revisit
 
     $ current_state = State.HUB_EXPLORE
     return
@@ -19,10 +19,7 @@ label visit_rpl_state.first_visit:
 
     "Saat hampir sampai, seseorang menepuk bahuku dari belakang. Aku menoleh dan menemukan seorang mahasiswa yang tersenyum ke arahku."
     
-    show andi neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5 
+    show andi neutral at character_center
 
     admin_rpl "Halo, mahasiswa baru ya?"
     aku "Iya, mas. Semester 1. Kok ketahuan?"
@@ -45,10 +42,7 @@ label visit_rpl_state.first_visit:
     hide andi
     menu:
         "Tanyakan tentang spesialisasi lab ini lebih lanjut":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             aku "Mas, aku penasaran, lab ini spesialisasinya apa sebenernya?"
             andi "Sesuai namanya, 'Rekayasa Perangkat Lunak'. Fokusnya ke pengembangan software secara menyeluruh."
             andi "Kamu semester 1, jadi mungkin belum ketemu mata kuliahnya. Tapi nanti bakal belajar soal keseluruhan proses pengembangan software, dari perencanaan, desain, implementasi, sampai testing dan deployment."
@@ -59,10 +53,7 @@ label visit_rpl_state.first_visit:
             andi "Sama-sama. Kalau mau tanya-tanya lagi, mampir aja."
 
         "Keluar lab":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             aku "Baik, makasih mas. Aku mau keliling ke lab lain dulu."
             andi "Iya, silahkan. Mampir lagi kalau butuh apa-apa ya."
 
@@ -71,20 +62,14 @@ label visit_rpl_state.first_visit:
     return
 
 label visit_rpl_state.revisit:
-    show andi neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show andi neutral at character_center
     "Aku kembali ke lab RPL. Andi mengangguk saat melihatku masuk."
     andi "Oh, balik lagi. Ada yang mau ditanyain?"
 
     hide andi
     menu:
         "Tanyakan tentang spesialisasi lab ini lagi":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             aku "Mas, aku mau minta penjelasan lagi soal spesialisasi lab ini. Boleh?"
             andi "Tentu. Jadi lab ini fokusnya ke pengembangan software secara menyeluruh."
             andi "Keseluruhan prosesnya, dari perencanaan, desain, implementasi, sampai testing dan deployment."
@@ -95,10 +80,7 @@ label visit_rpl_state.revisit:
             andi "Sama-sama. Kalau mau tanya lagi, mampir aja."
 
         "Keluar lab":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             aku "Nggak ada, mas. Makasih. Aku duluan ya."
             andi "Oke, hati-hati."
 

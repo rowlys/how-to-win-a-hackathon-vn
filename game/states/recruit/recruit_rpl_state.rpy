@@ -3,9 +3,9 @@ label recruit_rpl_state:
 
     if "rpl" not in visited_recruitment_locations:
         $ visited_recruitment_locations.add("rpl")
-        call recruit_rpl_state.first_visit
+        call recruit_rpl_state.first_visit from _call_recruit_rpl_state_first_visit
     else:
-        call recruit_rpl_state.revisit
+        call recruit_rpl_state.revisit from _call_recruit_rpl_state_revisit
 
     $ current_state = State.ASSEMBLE_TEAM
 
@@ -20,10 +20,7 @@ label recruit_rpl_state.first_visit:
     "Saat aku menyadarinya, Mas Andi pun menoleh ke arahku dan tersenyum ramah."
     "Aku jalan menghampirinya, sedikit gugup tapi juga bersemangat. Mas Andi kan jago! Kalau dia mau gabung di timku, pasti proyekku bakal makin bagus!"
 
-    show andi neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show andi neutral at character_center
     aku "Permisi, Mas Andi. Uh... aku lagi cari tim buat ikut hackathon, kira-kira Mas Andi mau gabung ga ya?"
     andi "Oh, halo. Ini buat proyek yang kemarin kamu omongin itu ya?"
     aku "Iya, mas. Sekarang aku masih kekurangan anggota tim, jadi aku lagi nyari-nyari siapa tau ada yang mau gabung."
@@ -57,53 +54,38 @@ label recruit_rpl_state.first_visit:
     hide andi
     menu:
         "Memastikan seluruh kode ditulis oleh satu developer agar tetap konsisten.":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             andi "Hehe, bukan itu. Separation of concerns itu soal struktur kode, bukan siapa yang nulis."
             andi "Coba pelajari dulu konsep arsitektur software-nya ya. Kalau udah siap, cari aku lagi."
             "Setelah mengucapkan terima kasih, aku pun pamit dan keluar dari Lab RPL."
             return
 
         "Membagi sistem menjadi bagian-bagian yang masing-masing punya tanggung jawab spesifik agar mudah dikelola.":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             $ andi_pass = True
             andi "Nah, bener! Separation of concerns itu memang soal memisahkan tanggung jawab tiap bagian sistem."
             andi "Oke, kamu ngerti. Jadi, yakin kalau keahlian aku sesuai sama kebutuhan proyek kamu?"
 
         "Mengurangi jumlah file dalam proyek sebanyak mungkin agar lebih ringkas.":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             andi "Bukan itu tujuannya. Kalau terlalu dipaksa ringkas, strukturnya malah bisa berantakan."
             andi "Pelajari dulu ya konsep arsitektur software-nya. Cari aku lagi kalau udah siap."
             "Setelah mengucapkan terima kasih, aku pun pamit dan keluar dari Lab RPL."
             return
 
         "Menyatukan seluruh logika program dalam satu modul agar mudah diakses.":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             andi "Justru sebaliknya! Separation of concerns itu soal memisahkan, bukan menyatukan semuanya."
             andi "Cari aku lagi kalau udah lebih paham soal ini ya."
             "Setelah mengucapkan terima kasih, aku pun pamit dan keluar dari Lab RPL."
             return
 
-    call recruit_rpl_state.recruit_andi
+    call recruit_rpl_state.recruit_andi from _call_recruit_rpl_state_recruit_andi
     return
 
 
 label recruit_rpl_state.revisit:
-    show andi neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show andi neutral at character_center
     "Aku kembali ke Lab RPL. Mas Andi menoleh dan langsung menyapaku."
     andi "Oh, sudah balik lagi. Ada yang mau ditanyain?"
     aku "Iya, mas. Aku mau minta penjelasan lagi soal keahlian mas kalau boleh."
@@ -122,44 +104,32 @@ label recruit_rpl_state.revisit:
         hide andi
         menu:
             "Memastikan seluruh kode ditulis oleh satu developer agar tetap konsisten.":
-                show andi neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show andi neutral at character_center
                 andi "Masih salah. Ini soal struktur kode, bukan soal siapa yang nulis."
                 andi "Cari aku lagi kalau udah siap ya."
                 "Aku pun pamit dan keluar dari Lab RPL."
                 return
 
             "Membagi sistem menjadi bagian-bagian yang masing-masing punya tanggung jawab spesifik agar mudah dikelola.":
-                show andi neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show andi neutral at character_center
                 andi "Tepat! Itu dia."
                 andi "Sekarang gimana? Yakin kalau keahlian aku sesuai sama kebutuhan proyek kamu?"
 
             "Mengurangi jumlah file dalam proyek sebanyak mungkin agar lebih ringkas.":
-                show andi neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show andi neutral at character_center
                 andi "Masih keliru. Bukan soal jumlah file-nya."
                 andi "Cari aku lagi kalau udah siap ya."
                 "Aku pun pamit dan keluar dari Lab RPL."
                 return
 
             "Menyatukan seluruh logika program dalam satu modul agar mudah diakses.":
-                show andi neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show andi neutral at character_center
                 andi "Justru kebalikannya. Separation itu pemisahan, bukan penyatuan."
                 andi "Cari aku lagi ya kalau udah lebih paham."
                 "Aku pun pamit dan keluar dari Lab RPL."
                 return
 
-    call recruit_rpl_state.recruit_andi
+    call recruit_rpl_state.recruit_andi from _call_recruit_rpl_state_recruit_andi_1
     return
 
 
@@ -167,10 +137,7 @@ label recruit_rpl_state.recruit_andi:
     hide andi
     menu:
         "'Yakin, mas.'":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             $ recruited_students.add("andi")
             aku "Iya, mas. Aku yakin banget kalau keahlian mas itu cocok banget buat proyekku. Aku butuh banget orang yang bisa bantuin coding dan desain sistem."
             andi "Kalau kamu yakin, aku sih senang banget bisa gabung di tim kamu. Aku juga lagi pengen banget ikut hackathon, jadi ini kesempatan yang bagus buat aku juga."
@@ -181,10 +148,7 @@ label recruit_rpl_state.recruit_andi:
             return
 
         "'Masih ragu, mas.'":
-            show andi neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show andi neutral at character_center
             aku "Hmm... Sebenarnya aku masih agak ragu, mas. Aku takutnya keahlian mas itu kurang cocok buat kebutuhan proyekku."
             andi "Oh, kalau gitu, pikirin aja dulu lagi ya. Nanti kalau kamu udah yakin, tanyain aja lagi ke aku."
             aku "Iya, baik mas. Mungkin aku coba cari yang lain dulu sekaligus mikirin kebutuhan proyekku, ya."

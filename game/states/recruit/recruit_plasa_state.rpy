@@ -3,9 +3,9 @@ label recruit_plasa_state:
 
     if "plasa" not in visited_recruitment_locations:
         $ visited_recruitment_locations.add("plasa")
-        call recruit_plasa_state.first_visit
+        call recruit_plasa_state.first_visit from _call_recruit_plasa_state_first_visit
     else:
-        call recruit_plasa_state.revisit
+        call recruit_plasa_state.revisit from _call_recruit_plasa_state_revisit
 
     $ current_state = State.ASSEMBLE_TEAM
     return
@@ -16,10 +16,7 @@ label recruit_plasa_state.first_visit:
     "Di salah satu bangku, ada seorang mahasiswi yang sedang duduk dengan laptop di pangkuannya, tampak fokus pada layarnya."
     "Aku memberanikan diri untuk menghampirinya."
 
-    show lila neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show lila neutral at character_center
     aku "Permisi, kak. Maaf ganggu. Boleh minta waktu sebentar?"
     lila "Eh, boleh. Ada apa ya?"
     aku "Aku lagi nyari orang buat diajak gabung di tim hackathon. Kak tertarik ga?"
@@ -55,53 +52,38 @@ label recruit_plasa_state.first_visit:
     hide lila
     menu:
         "Menyimpan salinan cadangan dari seluruh data dalam tabel.":
-            show lila neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show lila neutral at character_center
             lila "Itu fungsi backup, bukan index."
             lila "Kayaknya kamu perlu belajar lebih soal database dulu. Cari aku lagi kalau udah siap."
             "Aku pamit dan meninggalkan plasa."
             return
 
         "Mempercepat pencarian dan pengambilan data dari sebuah tabel.":
-            show lila neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show lila neutral at character_center
             $ lila_pass = True
             lila "Tepat. Index itu memang untuk optimasi query — biar pencarian lebih cepat."
             lila "Oke, kamu ngerti. Jadi, menurutmu keahlianku itu relevan buat proyekmu?"
 
         "Menentukan siapa saja yang berhak mengakses data dalam tabel.":
-            show lila neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show lila neutral at character_center
             lila "Itu access control atau permissions. Bukan fungsi index."
             lila "Belajar lebih soal konsep database dulu ya. Cari aku kalau udah siap."
             "Aku pamit dan meninggalkan plasa."
             return
 
         "Menggabungkan beberapa tabel menjadi satu kesatuan yang lebih besar.":
-            show lila neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show lila neutral at character_center
             lila "Itu lebih ke join atau relasi antar tabel. Beda sama index."
             lila "Pelajari dulu ya. Kalau udah siap, cari aku lagi."
             "Aku pamit dan meninggalkan plasa."
             return
 
-    call recruit_plasa_state.recruit_lila
+    call recruit_plasa_state.recruit_lila from _call_recruit_plasa_state_recruit_lila
     return
 
 
 label recruit_plasa_state.revisit:
-    show lila neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show lila neutral at character_center
     "Aku kembali ke plasa. Lila masih ada di bangku yang sama, mendongak saat aku menghampiri."
     lila "Oh, kamu lagi. Udah ada keputusan?"
     aku "Belum, kak. Boleh minta penjelasan lagi soal keahlian kakak?"
@@ -120,44 +102,32 @@ label recruit_plasa_state.revisit:
         hide lila
         menu:
             "Menyimpan salinan cadangan dari seluruh data dalam tabel.":
-                show lila neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show lila neutral at character_center
                 lila "Masih salah. Itu backup."
                 lila "Cari aku lagi kalau udah siap ya."
                 "Aku pamit dan meninggalkan plasa."
                 return
 
             "Mempercepat pencarian dan pengambilan data dari sebuah tabel.":
-                show lila neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show lila neutral at character_center
                 lila "Bener. Itu fungsinya."
                 lila "Jadi, menurutmu keahlianku relevan buat proyekmu?"
 
             "Menentukan siapa saja yang berhak mengakses data dalam tabel.":
-                show lila neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show lila neutral at character_center
                 lila "Masih keliru. Itu access control."
                 lila "Cari aku kalau udah siap ya."
                 "Aku pamit dan meninggalkan plasa."
                 return
 
             "Menggabungkan beberapa tabel menjadi satu kesatuan yang lebih besar.":
-                show lila neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show lila neutral at character_center
                 lila "Bukan. Itu join atau relasi antar tabel."
                 lila "Pelajari lagi ya. Cari aku kalau udah siap."
                 "Aku pamit dan meninggalkan plasa."
                 return
 
-    call recruit_plasa_state.recruit_lila
+    call recruit_plasa_state.recruit_lila from _call_recruit_plasa_state_recruit_lila_1
     return
 
 
@@ -165,10 +135,7 @@ label recruit_plasa_state.recruit_lila:
     hide lila
     menu:
         "'Relevan banget, kak.'":
-            show lila neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show lila neutral at character_center
             $ recruited_students.add("lila")
             aku "Relevan banget, kak! Aku butuh banget orang yang bisa handle bagian datanya."
             lila "Oke, kalau kamu yakin. Aku ikut deh."
@@ -179,10 +146,7 @@ label recruit_plasa_state.recruit_lila:
             return
 
         "'Masih ragu, kak.'":
-            show lila neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show lila neutral at character_center
             aku "Hmm, aku masih agak ragu kak. Aku takut keahlian kakak kurang pas sama yang proyekku butuhin."
             lila "Oh, nggak masalah. Pikirin dulu aja. Kalau udah yakin, cari aku lagi di sini."
             aku "Iya, makasih ya kak. Mungkin aku coba cari yang lain dulu."

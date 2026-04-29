@@ -3,9 +3,9 @@ label recruit_koridor_state:
 
     if "koridor" not in visited_recruitment_locations:
         $ visited_recruitment_locations.add("koridor")
-        call recruit_koridor_state.first_visit
+        call recruit_koridor_state.first_visit from _call_recruit_koridor_state_first_visit
     else:
-        call recruit_koridor_state.revisit
+        call recruit_koridor_state.revisit from _call_recruit_koridor_state_revisit
 
     $ current_state = State.ASSEMBLE_TEAM
     return
@@ -19,10 +19,7 @@ label recruit_koridor_state.first_visit:
     "Mba Anna — admin Lab GIGA yang kemarin banyak menjelaskan soal lab-nya. Aku nggak nyangka bisa ketemu dia di luar lab."
     "Aku melangkah ke arahnya. Anna menoleh dan langsung mengenaliku."
 
-    show anna neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show anna neutral at character_center
     anna "Oh! Kamu yang kemarin keliling lab-lab itu ya?"
     aku "Iya, mba! Mba Anna lagi ngapain di sini?"
     anna "Lagi istirahat sebentar. Kamu sendiri, masih keliling?"
@@ -60,53 +57,38 @@ label recruit_koridor_state.first_visit:
     hide anna
     menu:
         "Genre atau kategori dari sebuah game, seperti action, RPG, atau puzzle.":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             anna "Hmm, itu kategori game, bukan game feel."
             anna "Kayaknya kamu belum familiar sama konsep ini. Cari aku lagi kalau udah baca-baca ya."
             "Aku pamit ke Mba Anna dan melanjutkan pencarianku."
             return
 
         "Grafis dan soundtrack berkualitas tinggi yang membuat game terlihat keren.":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             anna "Itu presentasi — visual dan audio. Game feel itu lebih dari sekadar itu."
             anna "Coba pelajari lagi konsepnya ya. Cari aku kalau udah siap."
             "Aku pamit ke Mba Anna dan melanjutkan pencarianku."
             return
 
         "Respons sensoris dan feedback yang membuat setiap interaksi dalam game terasa memuaskan.":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             $ anna_pass = True
             anna "Nah, tepat! Game feel itu soal bagaimana setiap aksi pemain terasa responsif dan memuaskan."
             anna "Oke, kamu ngerti. Jadi gimana? Yakin butuh aku di timmu?"
 
         "Skor dan sistem pencapaian yang bisa didapat pemain selama bermain.":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             anna "Itu game progression atau reward system. Bukan game feel."
             anna "Pelajari lebih dulu ya. Cari aku kalau udah siap."
             "Aku pamit ke Mba Anna dan melanjutkan pencarianku."
             return
 
-    call recruit_koridor_state.recruit_anna
+    call recruit_koridor_state.recruit_anna from _call_recruit_koridor_state_recruit_anna
     return
 
 
 label recruit_koridor_state.revisit:
-    show anna neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show anna neutral at character_center
     "Aku kembali ke koridor. Mba Anna masih ada di sana, tersenyum saat melihatku mendekat."
     anna "Oh, balik lagi. Udah ada keputusan?"
     aku "Belum, mba. Boleh minta penjelasan lagi soal keahlian mba?"
@@ -125,44 +107,32 @@ label recruit_koridor_state.revisit:
         hide anna
         menu:
             "Genre atau kategori dari sebuah game, seperti action, RPG, atau puzzle.":
-                show anna neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show anna neutral at character_center
                 anna "Masih salah. Itu genre, bukan game feel."
                 anna "Cari aku lagi kalau udah baca-baca ya."
                 "Aku pamit ke Mba Anna."
                 return
 
             "Grafis dan soundtrack berkualitas tinggi yang membuat game terlihat keren.":
-                show anna neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show anna neutral at character_center
                 anna "Masih kurang tepat. Game feel itu lebih dari presentasi visual dan audio."
                 anna "Cari aku lagi kalau udah siap."
                 "Aku pamit ke Mba Anna."
                 return
 
             "Respons sensoris dan feedback yang membuat setiap interaksi dalam game terasa memuaskan.":
-                show anna neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show anna neutral at character_center
                 anna "Tepat! Itu dia."
                 anna "Jadi, yakin butuh aku di timmu?"
 
             "Skor dan sistem pencapaian yang bisa didapat pemain selama bermain.":
-                show anna neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show anna neutral at character_center
                 anna "Itu reward system. Berbeda dari game feel."
                 anna "Cari aku lagi kalau udah siap ya."
                 "Aku pamit ke Mba Anna."
                 return
 
-    call recruit_koridor_state.recruit_anna
+    call recruit_koridor_state.recruit_anna from _call_recruit_koridor_state_recruit_anna_1
     return
 
 
@@ -170,10 +140,7 @@ label recruit_koridor_state.recruit_anna:
     hide anna
     menu:
         "'Yakin, mba.'":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             $ recruited_students.add("anna")
             aku "Yakin, mba. Aku butuh orang yang bisa kasih perspektif itu ke proyekku."
             anna "Oke deh. Aku ikut."
@@ -184,10 +151,7 @@ label recruit_koridor_state.recruit_anna:
             return
 
         "'Masih ragu, mba.'":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Hmm, aku masih agak ragu mba. Aku takut keahlian mba kurang pas sama kebutuhan proyekku."
             anna "Oh, nggak masalah. Pikirin dulu. Kalau udah ada keputusan, cari aku lagi ya."
             aku "Iya, mba. Makasih ya."

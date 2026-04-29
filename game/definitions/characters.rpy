@@ -1,3 +1,8 @@
+transform character_center:
+    xalign 0.5
+    yalign 0.0
+    zoom 0.5
+
 define aku = Character("Aku")
 
 define juri = Character("Juri")

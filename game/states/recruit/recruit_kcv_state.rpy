@@ -3,9 +3,9 @@ label recruit_kcv_state:
 
     if "kcv" not in visited_recruitment_locations:
         $ visited_recruitment_locations.add("kcv")
-        call recruit_kcv_state.first_visit
+        call recruit_kcv_state.first_visit from _call_recruit_kcv_state_first_visit
     else:
-        call recruit_kcv_state.revisit
+        call recruit_kcv_state.revisit from _call_recruit_kcv_state_revisit
 
     $ current_state = State.ASSEMBLE_TEAM
 
@@ -18,10 +18,7 @@ label recruit_kcv_state.first_visit:
 
     "Mas Steven tampak sedang mengerjakan sesuatu di komputernya. Aku menghampiri dan menyapanya."
 
-    show steven neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show steven neutral at character_center
     aku "Mas Steven, maaf ganggu. Boleh minta waktu sebentar?"
     steven "Oh, kamu lagi. Boleh. Kenapa?"
     aku "Aku lagi nyari anggota tim buat hackathon. Aku kepikiran Mas Steven — kira-kira mau gabung ga?"
@@ -55,53 +52,38 @@ label recruit_kcv_state.first_visit:
     hide steven
     menu:
         "Menulis kode program secara manual untuk menentukan setiap keputusan model.":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             steven "Itu bukan machine learning — itu rule-based programming. Dua hal yang berbeda."
             steven "Sepertinya pemahamanmu soal AI masih perlu diasah. Cari aku lagi kalau udah lebih siap."
             "Aku pamit dan keluar dari Lab KCV."
             return
 
         "Proses model mempelajari pola dari data latih agar bisa membuat prediksi.":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             $ steven_pass = True
             steven "Tepat. Training itu inti dari machine learning — model belajar dari data."
             steven "Oke, kamu ngerti bidangku. Jadi, yakin kalau itu yang kamu butuhin?"
 
         "Mengunduh dan menginstal library AI yang dibutuhkan untuk proyek.":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             steven "Itu setup environment. Training itu sesuatu yang berbeda."
             steven "Pelajari dulu konsep dasarnya ya. Kalau udah siap, cari aku lagi."
             "Aku pamit dan keluar dari Lab KCV."
             return
 
         "Mendesain antarmuka visual dari aplikasi yang menggunakan AI.":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             steven "Itu UI/UX, bukan machine learning."
             steven "Kayaknya kamu perlu baca lebih soal AI dulu. Cari aku lagi ya."
             "Aku pamit dan keluar dari Lab KCV."
             return
 
-    call recruit_kcv_state.recruit_steven
+    call recruit_kcv_state.recruit_steven from _call_recruit_kcv_state_recruit_steven
     return
 
 
 label recruit_kcv_state.revisit:
-    show steven neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show steven neutral at character_center
     "Aku kembali ke Lab KCV. Mas Steven menoleh saat melihatku masuk."
     steven "Oh, balik lagi. Gimana, udah ada keputusan?"
     aku "Belum, mas. Aku mau minta penjelasan lagi soal keahlian mas kalau boleh."
@@ -121,44 +103,32 @@ label recruit_kcv_state.revisit:
         hide steven
         menu:
             "Menulis kode program secara manual untuk menentukan setiap keputusan model.":
-                show steven neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show steven neutral at character_center
                 steven "Masih keliru. Itu rule-based, bukan machine learning."
                 steven "Cari aku lagi kalau udah siap ya."
                 "Aku pamit dan keluar dari Lab KCV."
                 return
 
             "Proses model mempelajari pola dari data latih agar bisa membuat prediksi.":
-                show steven neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show steven neutral at character_center
                 steven "Bener. Itu jawabannya."
                 steven "Sekarang gimana? Yakin kalau itu yang kamu butuhin?"
 
             "Mengunduh dan menginstal library AI yang dibutuhkan untuk proyek.":
-                show steven neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show steven neutral at character_center
                 steven "Itu setup. Training berbeda dari itu."
                 steven "Cari aku lagi kalau udah siap ya."
                 "Aku pamit dan keluar dari Lab KCV."
                 return
 
             "Mendesain antarmuka visual dari aplikasi yang menggunakan AI.":
-                show steven neutral:
-                    xalign 0.5
-                    yalign 0.5
-                    zoom 1.5
+                show steven neutral at character_center
                 steven "Masih salah. Itu UI/UX."
                 steven "Pelajari dulu konsep ML-nya. Cari aku lagi."
                 "Aku pamit dan keluar dari Lab KCV."
                 return
 
-    call recruit_kcv_state.recruit_steven
+    call recruit_kcv_state.recruit_steven from _call_recruit_kcv_state_recruit_steven_1
     return
 
 
@@ -166,10 +136,7 @@ label recruit_kcv_state.recruit_steven:
     hide steven
     menu:
         "'Yakin, mas.'":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             $ recruited_students.add("steven")
             aku "Yakin banget, mas. Proyekku butuh orang yang ngerti AI, dan Mas Steven yang paling tepat buat itu."
             steven "Oke. Kalau kamu yakin, aku gabung."
@@ -180,10 +147,7 @@ label recruit_kcv_state.recruit_steven:
             return
 
         "'Masih ragu, mas.'":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             aku "Hmm... Aku masih agak ragu, mas. Takutnya keahlian mas kurang cocok sama kebutuhan proyekku."
             steven "Oh, kalau gitu pikirin dulu. Kalau udah yakin, cari aku lagi."
             aku "Iya, mas. Mungkin aku coba cari yang lain dulu."

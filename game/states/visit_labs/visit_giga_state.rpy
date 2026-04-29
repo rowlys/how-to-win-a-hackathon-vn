@@ -2,9 +2,9 @@ label visit_giga_state:
     scene bg giga with dissolve
     if "giga" not in visited_labs:
         $ visited_labs.add("giga")
-        call visit_giga_state.first_visit
+        call visit_giga_state.first_visit from _call_visit_giga_state_first_visit
     else:
-        call visit_giga_state.revisit
+        call visit_giga_state.revisit from _call_visit_giga_state_revisit
 
     $ current_state = State.HUB_EXPLORE
     return
@@ -16,10 +16,7 @@ label visit_giga_state.first_visit:
 
     "Seorang mahasiswa yang duduk di dekat pintu menyadari kehadiranku."
 
-    show anna neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show anna neutral at character_center
     admin_giga "Halo, pertama kali ke sini?"
     aku "Iya, mba. Aku mahasiswa baru, lagi keliling lab nih. Kelihatan bingung ya?"
     admin_giga "Hahaha, iya, agak. Wajar sih, lab ini emang sedikit... berbeda dari yang lain."
@@ -29,18 +26,12 @@ label visit_giga_state.first_visit:
     hide anna
     menu:
         "Tebak berdasarkan headset yang tergantung":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Itu headset VR ya, mba? Jadi lab ini berhubungan sama VR?"
             admin_giga "Wah, hampir tepat. VR dan AR emang salah satu yang dikerjain di sini. Tapi itu bukan satu-satunya."
 
         "Aku tidak bisa menebak":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Aku kurang bisa nangkep, mba. Bisa dijelasin langsung aja?"
             admin_giga "Tentu, dengan senang hati."
 
@@ -66,10 +57,7 @@ label visit_giga_state.first_visit:
     hide anna
     menu:
         "Tanyakan tentang pilar-pilar GIGA lebih lanjut":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Mba, bisa cerita lebih dalam ga soal mbaing-mbaing pilarnya? Aku penasaran soal implementasinya di dunia nyata."
             admin_giga "Tentu. Grafika misalnya, ini dipakai di mana-mana, dari film animbai, simulasi arsitektur, sampai visualisasi data ilmiah."
             admin_giga "Interaksi atau UI/UX itu krusial banget. Sebuah aplikasi yang bagus secara teknis tapi susah dipakai ya percuma. Di sini kita belajar riset pengguna, prototyping, dan evaluasi desain."
@@ -84,10 +72,7 @@ label visit_giga_state.first_visit:
             anna "Ingat ya, kalau mau mampir atau nanya-nanya, jangan sungkan cari aku aja."
 
         "Keluar lab":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Wah, keren banget mba."
             aku "Oh iya mba, aku lupa nanya. Kalau boleh tau, nama mba siapa ya?"
             admin_giga "Oh, namaku Anna, aku admin di lab ini."
@@ -100,20 +85,14 @@ label visit_giga_state.first_visit:
     return
 
 label visit_giga_state.revisit:
-    show anna neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show anna neutral at character_center
     "Aku kembali ke lab GIGA. Anna melambaikan tangan saat melihatku masuk."
     anna "Oh, balik lagi. Ada yang mau ditanyain?"
 
     hide anna
     menu:
         "Tanyakan tentang pilar-pilar GIGA lagi":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Mba, bisa minta penjelasan lagi soal pilar-pilar GIGA? Aku mau dengerin ulang."
             anna "Tentu. Grafika itu tentang computer graphics, visualisasi, dan rendering — bagaimana komputer menghasilkan gambar dan animasi."
             anna "Interaksi fokusnya ke UI/UX. Bagaimana desain antarmuka yang intuitif dan nyaman dipakai oleh pengguna."
@@ -125,10 +104,7 @@ label visit_giga_state.revisit:
             anna "Sama-sama. Kalau mau mampir lagi, jangan sungkan."
 
         "Keluar lab":
-            show anna neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show anna neutral at character_center
             aku "Nggak ada, mba. Makasih. Aku duluan ya."
             anna "Oke, hati-hati."
 

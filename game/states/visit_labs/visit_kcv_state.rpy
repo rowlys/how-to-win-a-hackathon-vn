@@ -2,9 +2,9 @@ label visit_kcv_state:
     scene bg kcv with dissolve
     if "kcv" not in visited_labs:
         $ visited_labs.add("kcv")
-        call visit_kcv_state.first_visit
+        call visit_kcv_state.first_visit from _call_visit_kcv_state_first_visit
     else:
-        call visit_kcv_state.revisit
+        call visit_kcv_state.revisit from _call_visit_kcv_state_revisit
 
     $ current_state = State.HUB_EXPLORE
     return
@@ -17,10 +17,7 @@ label visit_kcv_state.first_visit:
 
     "Seorang mahasiswa yang duduk di dekat pintu menoleh ke arahku."
 
-    show steven neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show steven neutral at character_center
     admin_kcv "Halo, nyasar, atau emang sengaja ke sini?"
     aku "Haha, sengaja, mas. Aku mahasiswa baru, lagi keliling untuk belajar tentang lab-lab di TC."
     admin_kcv "Oh, bagus dong. Jarang ada yang mau keliling lab sendiri gini. Salam kenal dong, namaku Steven."
@@ -48,10 +45,7 @@ label visit_kcv_state.first_visit:
     hide steven
     menu:
         "Tanyakan tentang spesialisasi lab ini lebih lanjut":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             aku "Mas, bisa cerita lebih lengkap soal bidang-bidang yang dipelajari di lab ini?"
             steven "Tentu. Jadi ada dua sisi besar di sini. Sisi 'Komputasi Cerdas' dan sisi 'Visi'."
             steven "Di sisi Komputasi Cerdas, kita bicara soal AI secara umum, computational intelligence, dan data mining. Intinya bagaimana komputer bisa belajar dari data dan mengambil keputusan yang cerdas."
@@ -68,10 +62,7 @@ label visit_kcv_state.first_visit:
             steven "Sama-sama. Kalau mau tanya lebih lanjut atau butuh referensi belajar, mampir lagi aja."
 
         "Keluar lab":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             aku "Wah, menarik banget mas. Baik, aku coba ke lab lain juga dulu ya mas. Terima kasih penjelasannya."
             steven "Sama-sama. Jangan sungkan buat balik lagi kalau mau tanya lebih lanjut ya."
 
@@ -80,20 +71,14 @@ label visit_kcv_state.first_visit:
     return
 
 label visit_kcv_state.revisit:
-    show steven neutral:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.5
+    show steven neutral at character_center
     "Aku kembali ke lab KCV. Steven menoleh saat mendengar pintu terbuka."
     steven "Oh, balik lagi. Ada yang bisa aku bantu?"
 
     hide steven
     menu:
         "Tanyakan tentang spesialisasi lab ini lagi":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             aku "Mas, bisa minta penjelasan lagi soal bidang-bidang yang dipelajari di sini?"
             steven "Tentu. Jadi ada dua sisi besar di sini. Sisi 'Komputasi Cerdas' dan sisi 'Visi'."
             steven "Di sisi Komputasi Cerdas, kita bicara soal AI secara umum, computational intelligence, dan data mining. Intinya bagaimana komputer bisa belajar dari data dan mengambil keputusan yang cerdas."
@@ -108,10 +93,7 @@ label visit_kcv_state.revisit:
             steven "Sama-sama. Jangan sungkan kalau mau tanya lagi."
 
         "Keluar lab":
-            show steven neutral:
-                xalign 0.5
-                yalign 0.5
-                zoom 1.5
+            show steven neutral at character_center
             aku "Nggak ada, mas. Makasih. Aku duluan ya."
             steven "Oke, hati-hati."
 

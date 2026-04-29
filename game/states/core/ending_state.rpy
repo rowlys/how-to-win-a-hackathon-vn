@@ -1,5 +1,5 @@
 label ending_state:
-    scene black with dissolve
+    scene bg hackathon_presentation with dissolve
     pause 1.5
 
     "Hari hackathon pun tiba."
@@ -23,6 +23,9 @@ label ending_state:
     "Dengan pengumuman itu, aku dan timku berjalan perlahan menuju panggung. Jantungku berdebar kencang, tapi aku tetap mencoba untuk tenang."
     "'Ini dia, hackathon pertamaku. Saatnya menunjukkan hasil kerja keras kami.'"
 
+    scene black with dissolve
+    pause 1.5
+
     "Kami mempresentasikan proyek kami di hadapan para juri, dan sekarang hanya bisa menunggu hasilnya diumumkan."
 
     $ correct_lab_map = {"ai": "kcv", "software": "rpl", "game": "giga"}
@@ -39,12 +42,15 @@ label ending_state:
     $ suitable_teammates = suitable_map.get(project_idea, set())
     $ suitable_count = len(recruited_students.intersection(suitable_teammates))
 
+    scene bg hackathon_announcement with dissolve
+
     "Setelah beberapa jam kami menunggu, akhirnya hasil akhir diumumkan."
     juri "Selamat siang kepada semua peserta. Setelah melalui proses penjurian yang ketat, kami telah memutuskan tiga tim terbaik."
     "..."
     "..."
 
     if correct_lab and suitable_count >= 3:
+        scene bg hackathon_first with dissolve
         "Tim kami meraih juara pertama!"
         "Semua kerja keras terbayar."
         "Begitulah jalan cerita hackathon pertamaku."
@@ -52,6 +58,7 @@ label ending_state:
         "'Lihat saja! Di hackathon berikutnya, aku pasti akan juara satu lagi!'"
 
     elif (correct_lab and suitable_count < 3) or ((not correct_lab) and suitable_count >= 3):
+        scene bg hackathon_podium with dissolve
         "Tim kami meraih podium!"
         "Kami naik podium dan mendapatkan penghargaan."
         "Bukan juara satu, tapi tetap membanggakan."
@@ -62,6 +69,7 @@ label ending_state:
         "Lihat saja! Di hackathon berikutnya, aku pasti akan juara satu!"
     
     else:
+        scene bg hackathon_lose with dissolve
         "Tim kami tidak memenangkan apapun kali ini."
         "Setidaknya kami belajar banyak dan punya pengalaman berharga."
         "Begitulah jalan cerita hackathon pertamaku."
