@@ -51,30 +51,25 @@ label recruit_rpl_state.first_visit:
     "Jadi ini soal memecah sistem jadi bagian-bagian yang masing-masing punya satu tanggung jawab spesifik."
     "Oke, aku yakin jawabannya."
 
-    hide andi
     menu:
         "Memastikan seluruh kode ditulis oleh satu developer agar tetap konsisten.":
-            show andi neutral at character_center
             andi "Hehe, bukan itu. Separation of concerns itu soal struktur kode, bukan siapa yang nulis."
             andi "Coba pelajari dulu konsep arsitektur software-nya ya. Kalau udah siap, cari aku lagi."
             "Setelah mengucapkan terima kasih, aku pun pamit dan keluar dari Lab RPL."
             return
 
         "Membagi sistem menjadi bagian-bagian yang masing-masing punya tanggung jawab spesifik agar mudah dikelola.":
-            show andi neutral at character_center
             $ andi_pass = True
             andi "Nah, bener! Separation of concerns itu memang soal memisahkan tanggung jawab tiap bagian sistem."
             andi "Oke, kamu ngerti. Jadi, yakin kalau keahlian aku sesuai sama kebutuhan proyek kamu?"
 
         "Mengurangi jumlah file dalam proyek sebanyak mungkin agar lebih ringkas.":
-            show andi neutral at character_center
             andi "Bukan itu tujuannya. Kalau terlalu dipaksa ringkas, strukturnya malah bisa berantakan."
             andi "Pelajari dulu ya konsep arsitektur software-nya. Cari aku lagi kalau udah siap."
             "Setelah mengucapkan terima kasih, aku pun pamit dan keluar dari Lab RPL."
             return
 
         "Menyatukan seluruh logika program dalam satu modul agar mudah diakses.":
-            show andi neutral at character_center
             andi "Justru sebaliknya! Separation of concerns itu soal memisahkan, bukan menyatukan semuanya."
             andi "Cari aku lagi kalau udah lebih paham soal ini ya."
             "Setelah mengucapkan terima kasih, aku pun pamit dan keluar dari Lab RPL."
@@ -101,29 +96,24 @@ label recruit_rpl_state.revisit:
         "Tujuannya biar lebih mudah dikelola, diubah, dan di-debug. Itu prinsip dasar arsitektur yang baik."
         "Kali ini aku harus jawab dengan bener."
 
-        hide andi
         menu:
             "Memastikan seluruh kode ditulis oleh satu developer agar tetap konsisten.":
-                show andi neutral at character_center
                 andi "Masih salah. Ini soal struktur kode, bukan soal siapa yang nulis."
                 andi "Cari aku lagi kalau udah siap ya."
                 "Aku pun pamit dan keluar dari Lab RPL."
                 return
 
             "Membagi sistem menjadi bagian-bagian yang masing-masing punya tanggung jawab spesifik agar mudah dikelola.":
-                show andi neutral at character_center
                 andi "Tepat! Itu dia."
                 andi "Sekarang gimana? Yakin kalau keahlian aku sesuai sama kebutuhan proyek kamu?"
 
             "Mengurangi jumlah file dalam proyek sebanyak mungkin agar lebih ringkas.":
-                show andi neutral at character_center
                 andi "Masih keliru. Bukan soal jumlah file-nya."
                 andi "Cari aku lagi kalau udah siap ya."
                 "Aku pun pamit dan keluar dari Lab RPL."
                 return
 
             "Menyatukan seluruh logika program dalam satu modul agar mudah diakses.":
-                show andi neutral at character_center
                 andi "Justru kebalikannya. Separation itu pemisahan, bukan penyatuan."
                 andi "Cari aku lagi ya kalau udah lebih paham."
                 "Aku pun pamit dan keluar dari Lab RPL."
@@ -134,10 +124,8 @@ label recruit_rpl_state.revisit:
 
 
 label recruit_rpl_state.recruit_andi:
-    hide andi
     menu:
         "'Yakin, mas.'":
-            show andi neutral at character_center
             $ recruited_students.add("andi")
             aku "Iya, mas. Aku yakin banget kalau keahlian mas itu cocok banget buat proyekku. Aku butuh banget orang yang bisa bantuin coding dan desain sistem."
             andi "Kalau kamu yakin, aku sih senang banget bisa gabung di tim kamu. Aku juga lagi pengen banget ikut hackathon, jadi ini kesempatan yang bagus buat aku juga."
@@ -148,7 +136,6 @@ label recruit_rpl_state.recruit_andi:
             return
 
         "'Masih ragu, mas.'":
-            show andi neutral at character_center
             aku "Hmm... Sebenarnya aku masih agak ragu, mas. Aku takutnya keahlian mas itu kurang cocok buat kebutuhan proyekku."
             andi "Oh, kalau gitu, pikirin aja dulu lagi ya. Nanti kalau kamu udah yakin, tanyain aja lagi ke aku."
             aku "Iya, baik mas. Mungkin aku coba cari yang lain dulu sekaligus mikirin kebutuhan proyekku, ya."

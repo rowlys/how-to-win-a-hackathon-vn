@@ -49,30 +49,25 @@ label recruit_kcv_state.first_visit:
     "Tujuannya supaya nanti model bisa bikin prediksi yang akurat ketemu data baru. Bukan soal nulis kode manual."
     "Oke, aku ngerti arahnya."
 
-    hide steven
     menu:
         "Menulis kode program secara manual untuk menentukan setiap keputusan model.":
-            show steven neutral at character_center
             steven "Itu bukan machine learning — itu rule-based programming. Dua hal yang berbeda."
             steven "Sepertinya pemahamanmu soal AI masih perlu diasah. Cari aku lagi kalau udah lebih siap."
             "Aku pamit dan keluar dari Lab KCV."
             return
 
         "Proses model mempelajari pola dari data latih agar bisa membuat prediksi.":
-            show steven neutral at character_center
             $ steven_pass = True
             steven "Tepat. Training itu inti dari machine learning — model belajar dari data."
             steven "Oke, kamu ngerti bidangku. Jadi, yakin kalau itu yang kamu butuhin?"
 
         "Mengunduh dan menginstal library AI yang dibutuhkan untuk proyek.":
-            show steven neutral at character_center
             steven "Itu setup environment. Training itu sesuatu yang berbeda."
             steven "Pelajari dulu konsep dasarnya ya. Kalau udah siap, cari aku lagi."
             "Aku pamit dan keluar dari Lab KCV."
             return
 
         "Mendesain antarmuka visual dari aplikasi yang menggunakan AI.":
-            show steven neutral at character_center
             steven "Itu UI/UX, bukan machine learning."
             steven "Kayaknya kamu perlu baca lebih soal AI dulu. Cari aku lagi ya."
             "Aku pamit dan keluar dari Lab KCV."
@@ -100,29 +95,24 @@ label recruit_kcv_state.revisit:
         "Bukan soal nulis kode manual, bukan soal install library. Ini soal model belajar dari contoh."
         "Aku harus jawab dengan bener kali ini."
 
-        hide steven
         menu:
             "Menulis kode program secara manual untuk menentukan setiap keputusan model.":
-                show steven neutral at character_center
                 steven "Masih keliru. Itu rule-based, bukan machine learning."
                 steven "Cari aku lagi kalau udah siap ya."
                 "Aku pamit dan keluar dari Lab KCV."
                 return
 
             "Proses model mempelajari pola dari data latih agar bisa membuat prediksi.":
-                show steven neutral at character_center
                 steven "Bener. Itu jawabannya."
                 steven "Sekarang gimana? Yakin kalau itu yang kamu butuhin?"
 
             "Mengunduh dan menginstal library AI yang dibutuhkan untuk proyek.":
-                show steven neutral at character_center
                 steven "Itu setup. Training berbeda dari itu."
                 steven "Cari aku lagi kalau udah siap ya."
                 "Aku pamit dan keluar dari Lab KCV."
                 return
 
             "Mendesain antarmuka visual dari aplikasi yang menggunakan AI.":
-                show steven neutral at character_center
                 steven "Masih salah. Itu UI/UX."
                 steven "Pelajari dulu konsep ML-nya. Cari aku lagi."
                 "Aku pamit dan keluar dari Lab KCV."
@@ -133,10 +123,8 @@ label recruit_kcv_state.revisit:
 
 
 label recruit_kcv_state.recruit_steven:
-    hide steven
     menu:
         "'Yakin, mas.'":
-            show steven neutral at character_center
             $ recruited_students.add("steven")
             aku "Yakin banget, mas. Proyekku butuh orang yang ngerti AI, dan Mas Steven yang paling tepat buat itu."
             steven "Oke. Kalau kamu yakin, aku gabung."
@@ -147,7 +135,6 @@ label recruit_kcv_state.recruit_steven:
             return
 
         "'Masih ragu, mas.'":
-            show steven neutral at character_center
             aku "Hmm... Aku masih agak ragu, mas. Takutnya keahlian mas kurang cocok sama kebutuhan proyekku."
             steven "Oh, kalau gitu pikirin dulu. Kalau udah yakin, cari aku lagi."
             aku "Iya, mas. Mungkin aku coba cari yang lain dulu."

@@ -23,15 +23,12 @@ label visit_giga_state.first_visit:
     aku "Berbeda gimana, mba?"
     admin_giga "Coba liat dulu aja sekeliling. Kira-kira kamu bisa tebak ga, lab ini spesialisasinya apa?"
 
-    hide anna
     menu:
         "Tebak berdasarkan headset yang tergantung":
-            show anna neutral at character_center
             aku "Itu headset VR ya, mba? Jadi lab ini berhubungan sama VR?"
             admin_giga "Wah, hampir tepat. VR dan AR emang salah satu yang dikerjain di sini. Tapi itu bukan satu-satunya."
 
         "Aku tidak bisa menebak":
-            show anna neutral at character_center
             aku "Aku kurang bisa nangkep, mba. Bisa dijelasin langsung aja?"
             admin_giga "Tentu, dengan senang hati."
 
@@ -54,10 +51,8 @@ label visit_giga_state.first_visit:
         aku "Iya, mba. Aku lagi nyari lab yang cocok buat ngerjain proyek hackathon. Proyekku berhubungan sama aplikasi manajemen keuangan."
         admin_giga "Oh, untuk software kayak gitu, mungkin lab lain lebih cocok spesialisasinya. Tapi kalau proyekmu butuh elemen UI/UX yang bagus, pilar Interaksi di sini bisa kasih banyak insight lho."
 
-    hide anna
     menu:
         "Tanyakan tentang pilar-pilar GIGA lebih lanjut":
-            show anna neutral at character_center
             aku "Mba, bisa cerita lebih dalam ga soal mbaing-mbaing pilarnya? Aku penasaran soal implementasinya di dunia nyata."
             admin_giga "Tentu. Grafika misalnya, ini dipakai di mana-mana, dari film animbai, simulasi arsitektur, sampai visualisasi data ilmiah."
             admin_giga "Interaksi atau UI/UX itu krusial banget. Sebuah aplikasi yang bagus secara teknis tapi susah dipakai ya percuma. Di sini kita belajar riset pengguna, prototyping, dan evaluasi desain."
@@ -72,7 +67,6 @@ label visit_giga_state.first_visit:
             anna "Ingat ya, kalau mau mampir atau nanya-nanya, jangan sungkan cari aku aja."
 
         "Keluar lab":
-            show anna neutral at character_center
             aku "Wah, keren banget mba."
             aku "Oh iya mba, aku lupa nanya. Kalau boleh tau, nama mba siapa ya?"
             admin_giga "Oh, namaku Anna, aku admin di lab ini."
@@ -89,10 +83,8 @@ label visit_giga_state.revisit:
     "Aku kembali ke lab GIGA. Anna melambaikan tangan saat melihatku masuk."
     anna "Oh, balik lagi. Ada yang mau ditanyain?"
 
-    hide anna
     menu:
         "Tanyakan tentang pilar-pilar GIGA lagi":
-            show anna neutral at character_center
             aku "Mba, bisa minta penjelasan lagi soal pilar-pilar GIGA? Aku mau dengerin ulang."
             anna "Tentu. Grafika itu tentang computer graphics, visualisasi, dan rendering — bagaimana komputer menghasilkan gambar dan animasi."
             anna "Interaksi fokusnya ke UI/UX. Bagaimana desain antarmuka yang intuitif dan nyaman dipakai oleh pengguna."
@@ -104,7 +96,6 @@ label visit_giga_state.revisit:
             anna "Sama-sama. Kalau mau mampir lagi, jangan sungkan."
 
         "Keluar lab":
-            show anna neutral at character_center
             aku "Nggak ada, mba. Makasih. Aku duluan ya."
             anna "Oke, hati-hati."
 

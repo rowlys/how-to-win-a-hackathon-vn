@@ -4,6 +4,44 @@
 
 init offset = -1
 
+init python:
+    import pygame
+
+    class RoundedRect(renpy.Displayable):
+        """Renders a colored rounded rectangle, for a smooth non-blocky UI."""
+
+        def __init__(self, color, radius=12, **kwargs):
+            super(RoundedRect, self).__init__(**kwargs)
+            c = renpy.easy.color(color)
+            self.rgba = (int(c[0]), int(c[1]), int(c[2]), int(c[3]))
+            self.radius = int(radius)
+
+        def render(self, width, height, st, at):
+            w = max(1, int(width))
+            h = max(1, int(height))
+            r = min(self.radius, w // 2, h // 2)
+            rgba = self.rgba
+
+            surf = renpy.display.pgrender.surface((w, h), True)
+            surf.fill((0, 0, 0, 0))
+
+            if r > 0:
+                pygame.draw.rect(surf, rgba, (r, 0, w - 2 * r, h))
+                pygame.draw.rect(surf, rgba, (0, r, w, h - 2 * r))
+                pygame.draw.circle(surf, rgba, (r, r), r)
+                pygame.draw.circle(surf, rgba, (w - r, r), r)
+                pygame.draw.circle(surf, rgba, (r, h - r), r)
+                pygame.draw.circle(surf, rgba, (w - r, h - r), r)
+            else:
+                surf.fill(rgba)
+
+            rv = renpy.Render(w, h)
+            rv.blit(surf, (0, 0))
+            return rv
+
+        def visit(self):
+            return []
+
 
 ################################################################################
 ## Styles
@@ -109,6 +147,8 @@ screen say(who, what):
 
         text what id "what"
 
+    ## Accent horizon line separating the game view from the dialogue area.
+    add Solid("#4fc3de45") xpos 0 ypos (1080 - gui.textbox_height) xsize 1920 ysize 2
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -131,22 +171,23 @@ style namebox_label is say_label
 
 style window:
     xalign 0.5
-    xfill True
+    xfill False
+    xsize 1820
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    # background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-    background Frame(Solid("#000000ff"), Borders(0, 0, 0, 0))
+    background RoundedRect("#070d1ef5", 20)
 
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
     xsize gui.namebox_width
     ypos gui.name_ypos
+    yanchor 1.0
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    padding gui.namebox_borders.padding
+    background RoundedRect("#0d2647e8", 10)
+    padding (22, 10, 22, 10)
 
 style say_label:
     properties gui.text_properties("name", accent=True)
@@ -226,6 +267,9 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    background RoundedRect("#0c1a2ed0", 14)
+    hover_background RoundedRect("#142f52e8", 14)
+    insensitive_background RoundedRect("#07090f70", 14)
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
@@ -274,9 +318,13 @@ style quick_menu:
 
 style quick_button:
     properties gui.button_properties("quick_button")
+    background Frame(Solid("#00000000"), Borders(0, 0, 0, 0))
+    hover_background Frame(Solid("#4fc3de12"), Borders(0, 0, 0, 0))
+    selected_background Frame(Solid("#4fc3de22"), Borders(0, 0, 0, 0))
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+    color "#b0c8de"
 
 
 ################################################################################
@@ -340,9 +388,13 @@ style navigation_button_text is gui_button_text
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
+    background Frame(Solid("#00000000"), Borders(0, 0, 0, 0))
+    hover_background Frame(Solid("#4fc3de16"), Borders(0, 0, 0, 0))
+    selected_background Frame(Solid("#4fc3de28"), Borders(0, 0, 0, 0))
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    color "#c0d4ea"
 
 
 ## Main Menu screen ############################################################
@@ -385,10 +437,10 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 420
+    xsize 400
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background Frame(Solid("#06091df2"), Borders(0, 0, 0, 0))
 
 style main_menu_vbox:
     xalign 1.0
@@ -504,7 +556,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background Frame(Solid("#06091df0"), Borders(0, 0, 0, 0))
 
 style game_menu_navigation_frame:
     xsize 420
@@ -1187,7 +1239,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background RoundedRect("#0c1928ec", 18)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
@@ -1540,6 +1592,8 @@ screen quick_menu():
 style window:
     variant "small"
     background "gui/phone/textbox.png"
+    xfill True
+    xsize None
 
 style radio_button:
     variant "small"

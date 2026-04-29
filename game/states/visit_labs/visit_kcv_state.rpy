@@ -42,10 +42,9 @@ label visit_kcv_state.first_visit:
         aku "Ada sih, mas. Aku lagi nyari lab yang cocok buat ngerjain proyek hackathon. Proyekku tentang aplikasi manajemen keuangan."
         steven "Oh, lebih ke software ya. Kalau untuk software umum, ada lab lain yang lebih pas spesialisasinya. Tapi kalau aplikasimu mau tambahin fitur analitik atau prediksi keuangan berbasis data, itu bisa nyerempet ke bidang kita kok."
 
-    hide steven
     menu:
         "Tanyakan tentang spesialisasi lab ini lebih lanjut":
-            show steven neutral at character_center
+    
             aku "Mas, bisa cerita lebih lengkap soal bidang-bidang yang dipelajari di lab ini?"
             steven "Tentu. Jadi ada dua sisi besar di sini. Sisi 'Komputasi Cerdas' dan sisi 'Visi'."
             steven "Di sisi Komputasi Cerdas, kita bicara soal AI secara umum, computational intelligence, dan data mining. Intinya bagaimana komputer bisa belajar dari data dan mengambil keputusan yang cerdas."
@@ -62,7 +61,7 @@ label visit_kcv_state.first_visit:
             steven "Sama-sama. Kalau mau tanya lebih lanjut atau butuh referensi belajar, mampir lagi aja."
 
         "Keluar lab":
-            show steven neutral at character_center
+    
             aku "Wah, menarik banget mas. Baik, aku coba ke lab lain juga dulu ya mas. Terima kasih penjelasannya."
             steven "Sama-sama. Jangan sungkan buat balik lagi kalau mau tanya lebih lanjut ya."
 
@@ -75,10 +74,9 @@ label visit_kcv_state.revisit:
     "Aku kembali ke lab KCV. Steven menoleh saat mendengar pintu terbuka."
     steven "Oh, balik lagi. Ada yang bisa aku bantu?"
 
-    hide steven
     menu:
         "Tanyakan tentang spesialisasi lab ini lagi":
-            show steven neutral at character_center
+    
             aku "Mas, bisa minta penjelasan lagi soal bidang-bidang yang dipelajari di sini?"
             steven "Tentu. Jadi ada dua sisi besar di sini. Sisi 'Komputasi Cerdas' dan sisi 'Visi'."
             steven "Di sisi Komputasi Cerdas, kita bicara soal AI secara umum, computational intelligence, dan data mining. Intinya bagaimana komputer bisa belajar dari data dan mengambil keputusan yang cerdas."
@@ -93,7 +91,7 @@ label visit_kcv_state.revisit:
             steven "Sama-sama. Jangan sungkan kalau mau tanya lagi."
 
         "Keluar lab":
-            show steven neutral at character_center
+    
             aku "Nggak ada, mas. Makasih. Aku duluan ya."
             steven "Oke, hati-hati."
 

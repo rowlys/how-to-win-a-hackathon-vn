@@ -47,30 +47,25 @@ label recruit_vending_state.first_visit:
     "'Backend itu yang jalan di balik layar. API itu cara bagian lain dari sistem, kayak frontend, bisa ngomong sama backend.'"
     "'Oke, aku ngerti arahnya.'"
 
-    hide popol
     menu:
         "Mengatur tampilan dan komponen visual dari sebuah aplikasi.":
-            show popol neutral at character_center
             popol "Itu frontend. Beda sama backend."
             popol "Kayaknya kamu perlu belajar lebih soal ini dulu. Cari aku lagi kalau udah siap."
             "Aku pamit dan keluar dari kelas."
             return
 
         "Menjadi jembatan komunikasi antara frontend dan sistem backend.":
-            show popol neutral at character_center
             $ popol_pass = True
             popol "Tepat. API itu yang ngehubungin antar komponen sistem."
             popol "Oke, kamu ngerti. Nah, itu yang kamu butuhin di proyekmu?"
 
         "Menyimpan dan mengelola seluruh data pengguna secara permanen.":
-            show popol neutral at character_center
             popol "Itu fungsi database. API dan database itu beda."
             popol "Belajar dulu deh soal arsitektur backend. Kalau udah siap, cari aku lagi."
             "Aku pamit dan keluar dari kelas."
             return
 
         "Menggantikan fungsi database dalam sebuah aplikasi.":
-            show popol neutral at character_center
             popol "Salah. API itu bukan pengganti database."
             popol "Kamu perlu pahami dulu perbedaan tiap komponen backend. Cari aku lagi ya."
             "Aku pamit dan keluar dari kelas."
@@ -97,29 +92,24 @@ label recruit_vending_state.revisit:
         "Bukan penyimpan data, bukan pengatur tampilan. API itu yang ngehubungin semuanya."
         "Aku nggak boleh salah lagi."
 
-        hide popol
         menu:
             "Mengatur tampilan dan komponen visual dari sebuah aplikasi.":
-                show popol neutral at character_center
                 popol "Masih salah. Itu frontend."
                 popol "Cari aku lagi kalau udah belajar lebih soal ini."
                 "Aku pamit dan keluar dari kelas."
                 return
 
             "Menjadi jembatan komunikasi antara frontend dan sistem backend.":
-                show popol neutral at character_center
                 popol "Bener. Itu fungsinya."
                 popol "Oke. Nah, itu yang kamu butuhin di proyekmu?"
 
             "Menyimpan dan mengelola seluruh data pengguna secara permanen.":
-                show popol neutral at character_center
                 popol "Itu database. Beda sama API."
                 popol "Belajar lagi dulu ya. Cari aku kalau udah siap."
                 "Aku pamit dan keluar dari kelas."
                 return
 
             "Menggantikan fungsi database dalam sebuah aplikasi.":
-                show popol neutral at character_center
                 popol "Masih salah. API bukan pengganti database."
                 popol "Cari aku lagi kalau udah siap ya."
                 "Aku pamit dan keluar dari kelas."
@@ -130,10 +120,8 @@ label recruit_vending_state.revisit:
 
 
 label recruit_vending_state.recruit_popol:
-    hide popol
     menu:
         "'Butuhin banget, mas.'":
-            show popol neutral at character_center
             $ recruited_students.add("popol")
             aku "Butuhin banget, mas. Proyekku pasti butuh backend yang kuat."
             popol "Oke. Aku gabung."
@@ -144,7 +132,6 @@ label recruit_vending_state.recruit_popol:
             return
 
         "'Masih ragu, mas.'":
-            show popol neutral at character_center
             aku "Hmm, aku masih agak ragu mas. Takutnya keahlian mas bukan yang paling dibutuhin proyekku sekarang."
             popol "Oh, oke. Pikirin dulu. Kalau udah yakin, cari aku di sini lagi."
             aku "Iya, mas. Mungkin aku coba cari yang lain dulu."
