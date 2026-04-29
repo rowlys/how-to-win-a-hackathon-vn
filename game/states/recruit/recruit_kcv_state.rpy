@@ -18,6 +18,10 @@ label recruit_kcv_state.first_visit:
 
     "Mas Steven tampak sedang mengerjakan sesuatu di komputernya. Aku menghampiri dan menyapanya."
 
+    show steven neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     aku "Mas Steven, maaf ganggu. Boleh minta waktu sebentar?"
     steven "Oh, kamu lagi. Boleh. Kenapa?"
     aku "Aku lagi nyari anggota tim buat hackathon. Aku kepikiran Mas Steven — kira-kira mau gabung ga?"

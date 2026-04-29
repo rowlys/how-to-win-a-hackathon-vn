@@ -15,7 +15,11 @@ label visit_giga_state.first_visit:
     "Aku masuk ke dalamnya. Suasana di dalam cukup ramai, dengan sebuah layar besar diujung meja besar di tengah ruangan, dan ada sudut ruangan yang entah kenapa terdapat kabel-kabel dengan headset aneh tergantung di sana."
 
     "Seorang mahasiswa yang duduk di dekat pintu menyadari kehadiranku."
-    # Kasi liat admin giga
+    
+    show anna neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     admin_giga "Halo, pertama kali ke sini?"
     aku "Iya, mba. Aku mahasiswa baru, lagi keliling lab nih. Kelihatan bingung ya?"
     admin_giga "Hahaha, iya, agak. Wajar sih, lab ini emang sedikit... berbeda dari yang lain."

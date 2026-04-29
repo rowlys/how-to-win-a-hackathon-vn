@@ -18,8 +18,11 @@ label visit_rpl_state.first_visit:
     "Aku melangkah pelan menuju salah satu meja kosong, sedikit canggung karena tidak tahu aturannya."
 
     "Saat hampir sampai, seseorang menepuk bahuku dari belakang. Aku menoleh dan menemukan seorang mahasiswa yang tersenyum ke arahku."
-    # Kasi liat admin rpl
-
+    
+    show andi neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5 
     admin_rpl "Halo, mahasiswa baru ya?"
     aku "Iya, mas. Semester 1. Kok ketahuan?"
     admin_rpl "Hahaha, gara-gara kelihatan bingung sih. Yang belum pernah ke sini biasanya emang gitu."

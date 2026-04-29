@@ -16,6 +16,10 @@ label recruit_plasa_state.first_visit:
     "Di salah satu bangku, ada seorang mahasiswi yang sedang duduk dengan laptop di pangkuannya, tampak fokus pada layarnya."
     "Aku memberanikan diri untuk menghampirinya."
 
+    show lila neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     aku "Permisi, kak. Maaf ganggu. Boleh minta waktu sebentar?"
     lila "Eh, boleh. Ada apa ya?"
     aku "Aku lagi nyari orang buat diajak gabung di tim hackathon. Kak tertarik ga?"

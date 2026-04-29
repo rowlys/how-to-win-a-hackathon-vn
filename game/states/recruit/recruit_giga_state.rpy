@@ -18,6 +18,10 @@ label recruit_giga_state.first_visit:
     "Arif adalah teman sekelasku. Aku tau dia sering ngabisin waktu di sekitar sini, tapi nggak nyangka bakal ketemu dia pas lagi nyari-nyari orang."
     "Aku berjalan ke arahnya. Arif mendongak dari laptopnya dan langsung nyengir."
 
+    show arif neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     arif "Eh, tumben nongol sini! Lagi ngapain?"
     aku "Lagi nyari-nyari orang buat diajak gabung di tim hackathon. Kamu sendiri ngapain di sini?"
     arif "Biasalah, ngerjain tugas desain. Lab ini enak, vibes-nya bagus."

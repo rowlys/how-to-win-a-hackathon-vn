@@ -19,6 +19,10 @@ label recruit_koridor_state.first_visit:
     "Mba Anna — admin Lab GIGA yang kemarin banyak menjelaskan soal lab-nya. Aku nggak nyangka bisa ketemu dia di luar lab."
     "Aku melangkah ke arahnya. Anna menoleh dan langsung mengenaliku."
 
+    show anna neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     anna "Oh! Kamu yang kemarin keliling lab-lab itu ya?"
     aku "Iya, mba! Mba Anna lagi ngapain di sini?"
     anna "Lagi istirahat sebentar. Kamu sendiri, masih keliling?"

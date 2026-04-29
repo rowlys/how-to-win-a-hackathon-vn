@@ -16,7 +16,11 @@ label visit_kcv_state.first_visit:
     "Beberapa mahasiswa tampak fokus menatap layar mereka, sebagian menampilkan grafik-grafik dan visualisasi data yang asing bagiku."
 
     "Seorang mahasiswa yang duduk di dekat pintu menoleh ke arahku."
-    # Kasi liat admin kcv
+    
+    show steven neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     admin_kcv "Halo, nyasar, atau emang sengaja ke sini?"
     aku "Haha, sengaja, mas. Aku mahasiswa baru, lagi keliling untuk belajar tentang lab-lab di TC."
     admin_kcv "Oh, bagus dong. Jarang ada yang mau keliling lab sendiri gini. Salam kenal dong, namaku Steven."

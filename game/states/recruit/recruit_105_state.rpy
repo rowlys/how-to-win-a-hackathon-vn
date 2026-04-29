@@ -16,6 +16,10 @@ label recruit_105_state.first_visit:
     "Di salah satu kursi, ada seorang mahasiswa yang tampak sedang mengetik serius di laptopnya."
     "Aku menghampirinya."
 
+    show popol neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     aku "Permisi, mas. Maaf ganggu. Boleh minta waktu sebentar?"
     popol "Eh, boleh. Ada apa?"
     aku "Salam kenal mas, aku mahasiswa baru di sini. Aku lagi nyari orang buat diajak gabung di tim hackathon. Mas tertarik ga?"

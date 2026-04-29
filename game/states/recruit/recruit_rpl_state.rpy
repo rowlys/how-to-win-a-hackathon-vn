@@ -20,6 +20,10 @@ label recruit_rpl_state.first_visit:
     "Saat aku menyadarinya, Mas Andi pun menoleh ke arahku dan tersenyum ramah."
     "Aku jalan menghampirinya, sedikit gugup tapi juga bersemangat. Mas Andi kan jago! Kalau dia mau gabung di timku, pasti proyekku bakal makin bagus!"
 
+    show andi neutral:
+        xalign 0.5
+        yalign 0.5
+        zoom 1.5
     aku "Permisi, Mas Andi. Uh... aku lagi cari tim buat ikut hackathon, kira-kira Mas Andi mau gabung ga ya?"
     andi "Oh, halo. Ini buat proyek yang kemarin kamu omongin itu ya?"
     aku "Iya, mas. Sekarang aku masih kekurangan anggota tim, jadi aku lagi nyari-nyari siapa tau ada yang mau gabung."
